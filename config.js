@@ -7,11 +7,14 @@ module.exports = {
     password: process.env.PASSWORD,
     server: process.env.SERVER,
     database: process.env.DB_NAME,
-    driver: 'msnodesqlv8',
-    port: 1433,
+   
     options: {
-        trustedConnection: true, 
-        encrypt: true,
-      }
+      trustServerCertificate:true,
+      trustedConnection:false,
+      enableArithAbrot:true,
+      instancename:"SQLEXPRESS"
+      },
+      port:1433
+      
   },
 };
