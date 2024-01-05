@@ -6,10 +6,11 @@ async function connectToSqlServer() {
   try {
     const pool = await sql.connect(config.DB_CONFIG);
     console.log("Database Connection Established");
+    let employee= await pool.request().query("SELECT * FROM   employeedemographic")
+    console.log(employee);
+        return employee
     
-    // Perform your database operations using the 'pool' object if needed
 
-    // Don't forget to close the connection when done
     await pool.close();
   } catch (err) {
     console.error("Error connecting to SQL Server:", err);
